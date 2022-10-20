@@ -31,7 +31,7 @@ ${data.Question}
 `
 }
 
-function generateLicenseBadge(data)
+// function generateLicenseBadge(data)
 
 // TODO: Create a function to initialize app
 function init() {}
