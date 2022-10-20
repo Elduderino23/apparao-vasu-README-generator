@@ -13,11 +13,13 @@ function writeToFile(fileName, data) {
 
 function generateMarkdown(data){
    var badge = generateLicenseBadge(data)
+   var select = TableOfContentsBtn(data)
     return `
 ${badge}
 # ${data.Opening}
 ## Table of Contents
 ${data.TableOfContents}
+${select}
 ## Description
 ${data.Description}
 ## Installation
@@ -75,6 +77,37 @@ function generateLicenseBadge(data){
     }
 }
 
+function TableOfContentsBtn(data){
+    if (data.Description === "Description") {
+        return "[Description](#Description)"
+    }
+
+    if (data.Installation === "Installation") {
+        return "[Installation](#Installation)"
+    }
+
+    if (data.Usage === "Usage") {
+        return "[Usage](#Usage)"
+    }
+
+    if (data.Contributing === "Contributing") {
+        return "[Contributing](#Contributing)"
+    }
+
+    if (data.Test === "Test") {
+        return "[Test](#Test)"
+    }
+
+    if (data.License === "License") {
+        return "[License](#License)"
+    }
+
+    
+    if (data.Question === "Question") {
+        return "[Question](#Question)"
+    }
+}
+
 // TODO: Create a function to initialize app
 function init() {}
 
@@ -82,7 +115,7 @@ function init() {}
 init();
 inquirer.prompt([{
     name: "Opening", 
-    message: "Excellent, what name do you want to give your project?",
+    message: "what name do you want to give your project?",
     type: "input",
 
 }, {
