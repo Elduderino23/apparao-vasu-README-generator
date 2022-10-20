@@ -13,25 +13,32 @@ function writeToFile(fileName, data) {
 
 function generateMarkdown(data){
    var badge = generateLicenseBadge(data)
-   var select = TableOfContentsBtn(data)
     return `
 ${badge}
 # ${data.Opening}
 ## Table of Contents
-${data.TableOfContents}
-${select}
+- [Description](#description)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Contributing](#contributing)
+- [Test](#test)
+- [License](#license)
+- [Question](#question)
 ## Description
 ${data.Description}
 ## Installation
 ${data.Installation}
 ## Usage
 ${data.Usage}
+## Contributing
+${data.Contributing}
 ## Test
 ${data.Test}
 ## License
 ${data.License}
 ## Question
-${data.Question}
+[Github Profile](https://github.com/${data.Question})
+
 `
 }
 
@@ -77,36 +84,6 @@ function generateLicenseBadge(data){
     }
 }
 
-function TableOfContentsBtn(data){
-    if (data.Description === "Description") {
-        return "[Description](#Description)"
-    }
-
-    if (data.Installation === "Installation") {
-        return "[Installation](#Installation)"
-    }
-
-    if (data.Usage === "Usage") {
-        return "[Usage](#Usage)"
-    }
-
-    if (data.Contributing === "Contributing") {
-        return "[Contributing](#Contributing)"
-    }
-
-    if (data.Test === "Test") {
-        return "[Test](#Test)"
-    }
-
-    if (data.License === "License") {
-        return "[License](#License)"
-    }
-
-    
-    if (data.Question === "Question") {
-        return "[Question](#Question)"
-    }
-}
 
 // TODO: Create a function to initialize app
 function init() {}
