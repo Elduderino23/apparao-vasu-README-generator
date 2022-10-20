@@ -37,8 +37,9 @@ ${data.Test}
 ## License
 ${data.License}
 ## Question
-[Github Profile](https://github.com/${data.Question})
+[Github Profile](https://github.com/${data.GitHub})
 
+Email: ${data.Email}
 `
 }
 
@@ -133,8 +134,18 @@ inquirer.prompt([{
     choices: ['none', 'Apache', 'Boost', 'BSD 3-Clause License', 'BSD 2-Clause License', 'Creative Commons', 'Eclipse Public License 1.0', 'GNU', 'Mozilla Public License 2.0', 'The MIT License', 'The Unlicense']
 
 }, {
-    name: "Question", 
-    message: "Excellent, please input your Github username with a link to your Github profile and your email in Question section.",
+    name: "GitHub", 
+    message: "Excellent, please input your Github username in Question section.",
+    type: "input",
+
+}, {
+    name: "Email", 
+    message: "Excellent, please input your email address into Question section.",
+    type: "input",
+}, {
+
+    name: "Final", 
+    message: "Excellent, would you kindly press enter and wait for the README to be generated?",
     type: "input",
 
 }]).then(function(data){
