@@ -12,8 +12,9 @@ function writeToFile(fileName, data) {
 }
 
 function generateMarkdown(data){
+   var badge = generateLicenseBadge(data)
     return `
-    ${generateLicenseBadge(data)}
+${badge}
 # ${data.Opening}
 ## Table of Contents
 ${data.TableOfContents}
@@ -33,8 +34,44 @@ ${data.Question}
 }
 
 function generateLicenseBadge(data){
-    if (data.license === "Apache") {
-        return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0"
+    if (data.License === "Apache") {
+        return "![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)"
+    }
+
+    if (data.License === "Boost") {
+        return "![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)"
+    }
+
+    if (data.License === "BSD 3-Clause License") {
+        return "![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)"
+    }
+
+    if (data.License === "BSD 2-Clause License") {
+        return "![License](https://img.shields.io/badge/License-Boost_1.0-lightblue.svg)"
+    }
+
+    if (data.License === "Creative Commons") {
+        return "![License: CC0-1.0](https://licensebuttons.net/l/zero/1.0/80x15.png)"
+    }
+
+    if (data.License === "Eclipse Public License 1.0") {
+        return "![License](https://img.shields.io/badge/License-EPL_1.0-red.svg)"
+    }
+
+    if (data.License === "GNU") {
+        return "![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)"
+    }
+
+    if (data.License === "Mozilla Public License 2.0") {
+        return "![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)"
+    }
+
+    if (data.License === "The MIT License") {
+        return "![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)"
+    }
+
+    if (data.License === "The Unlicense") {
+        return "![License: Unlicense](https://img.shields.io/badge/license-Unlicense-blue.svg)"
     }
 }
 
