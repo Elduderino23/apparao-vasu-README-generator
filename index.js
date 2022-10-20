@@ -13,6 +13,7 @@ function writeToFile(fileName, data) {
 
 function generateMarkdown(data){
     return `
+    ${generateLicenseBadge(data)}
 # ${data.Opening}
 ## Table of Contents
 ${data.TableOfContents}
@@ -31,7 +32,11 @@ ${data.Question}
 `
 }
 
-// function generateLicenseBadge(data)
+function generateLicenseBadge(data){
+    if (data.license === "Apache") {
+        return "[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0"
+    }
+}
 
 // TODO: Create a function to initialize app
 function init() {}
