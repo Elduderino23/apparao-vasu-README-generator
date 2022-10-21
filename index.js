@@ -96,7 +96,7 @@ inquirer.prompt([{
 
 }, {
     name: "TableOfContents", 
-    message: "Please enter Table of Contents",
+    message: "Please press enter for Table of Contents",
     type: "input",
 
 }, {
@@ -127,7 +127,7 @@ inquirer.prompt([{
 
 }, {
     name: "License", 
-    message: "Excellent, please select a license from the list in License section?",
+    message: "Excellent, please select a license from the list in License section.",
     type: "list",
     choices: ['none', 'Apache', 'Boost', 'BSD 3-Clause License', 'BSD 2-Clause License', 'Creative Commons', 'Eclipse Public License 1.0', 'GNU', 'Mozilla Public License 2.0', 'The MIT License', 'The Unlicense']
 
