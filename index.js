@@ -149,5 +149,5 @@ inquirer.prompt([{
 }]).then(function(data){
     var markDown = generateMarkdown(data)
     writeToFile("INPUT.md", markDown);
-    // console.log(data)
+    
 })
